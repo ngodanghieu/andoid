@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin_left_16">16dp</dimen>
+    <dimen name="margin_right_16">16dp</dimen>
+    <dimen name="margin_top_16">16dp</dimen>
+    <dimen name="margin_bottom_16">16dp</dimen>
+
+    <dimen name="margin_top_8">8dp</dimen>
+    <dimen name="margin_bottom_8">8dp</dimen>
+    <dimen name="margin_left_8">8dp</dimen>
+    <dimen name="margin_right_8">8dp</dimen>
+
+    <dimen name="margin_top_4">4dp</dimen>
+    <dimen name="margin_bottom_4">4dp</dimen>
+    <dimen name="margin_left_4">4dp</dimen>
+    <dimen name="margin_right_4">4dp</dimen>
+
+    <dimen name="popup_width">310dp</dimen>
+    <dimen name="radius_2">2dp</dimen>
+    <dimen name="radius_8">8dp</dimen>
+    <dimen name="radius_16">16dp</dimen>
+    <dimen name="radius_24">24dp</dimen>
+    <dimen name="radius_32">32dp</dimen>
+
+    <dimen name="padding_1">1dp</dimen>
+    <dimen name="padding_4">4dp</dimen>
+    <dimen name="padding_8">8dp</dimen>
+    <dimen name="padding_12">12dp</dimen>
+    <dimen name="padding_14">14dp</dimen>
+    <dimen name="padding_16">16dp</dimen>
+
+    <dimen name="text_16">16dp</dimen>
+    <dimen name="text_14">14dp</dimen>
+    <dimen name="text_12">12dp</dimen>
+    <dimen name="text_18">18dp</dimen>
+    <dimen name="text_20">20dp</dimen>
+    <dimen name="text_22">22dp</dimen>
+    <dimen name="text_24">24dp</dimen>
+    <dimen name="text_26">26dp</dimen>
+
+    <dimen name="dimen_1">1dp</dimen>
+    <dimen name="lineSpacingExtra_4">4dp</dimen>
+
+
+    <dimen name="viewportWidth">24.0</dimen>
+    <dimen name="viewportHeight">24.0</dimen>
+
+
+    <dimen name="vector_height">24dp</dimen>
+    <dimen name="vector_width">24dp</dimen>
+
+    <dimen name="padding_S">3dp</dimen>
+    <dimen name="padding_M">5dp</dimen>
+    <dimen name="padding_L">7dp</dimen>
+    <dimen name="padding_XL">10dp</dimen>
+    <dimen name="padding_XXL">15dp</dimen>
+    <dimen name="padding_20">20dp</dimen>
+    <dimen name="padding_30">30dp</dimen>
+    <dimen name="padding_34">34dp</dimen>
+    <dimen name="padding_40">40dp</dimen>
+    <dimen name="padding_50">50dp</dimen>
+    <dimen name="padding_60">60dp</dimen>
+    <dimen name="toolbar_height">48dp</dimen>
+    <dimen name="menu_icon">24dp</dimen>
+
+    <dimen name="thumb_normal_width">90dp</dimen>
+    <dimen name="thumb_normal_height">77dp</dimen>
+    <dimen name="thumb_medium_width">105dp</dimen>
+    <dimen name="thumb_medium_height">93dp</dimen>
+    <dimen name="header_logo_height">146dp</dimen>
+    <!--corner-->
+    <dimen name="corner_S">2dp</dimen>
+    <dimen name="corner_M">5dp</dimen>
+    <dimen name="corner_L">8dp</dimen>
+    <dimen name="corner_XL">15dp</dimen>
+
+    <dimen name="button_height_M">32dp</dimen>
+    <dimen name="button_height_L">38dp</dimen>
+    <dimen name="button_height_XL">44dp</dimen>
+
+    <dimen name="text_lv1">10sp</dimen>
+    <dimen name="text_lv2">11.5sp</dimen>
+    <dimen name="text_lv2_5">13sp</dimen>
+    <dimen name="text_lv3">14.5sp</dimen>
+    <dimen name="text_lv3_5">16sp</dimen>
+    <dimen name="text_lv4">18sp</dimen>
+    <dimen name="text_lv5">20sp</dimen>
+    <dimen name="text_lv6">24sp</dimen>
+    <dimen name="text_lv7">27sp</dimen>
+    <dimen name="text_lv8">30sp</dimen>
+    <dimen name="text_lv9">34sp</dimen>
+
+    <dimen name="more_item_height">58dp</dimen>
+    <dimen name="more_item_icon">24dp</dimen>
+    <dimen name="home_location_height">58dp</dimen>
+    <dimen name="home_notification_height">78dp</dimen>
+    <dimen name="divider">0.75dp</dimen>
+    <dimen name="divider_grid">6dp</dimen>
+    <dimen name="menu_item_height">50dp</dimen>
+    <dimen name="about_logo">58dp</dimen>
+    <dimen name="clear_size">24dp</dimen>
+    <dimen name="clear_width">30dp</dimen>
+    <dimen name="favorite_width">30dp</dimen>
+    <dimen name="favorite_padding">0dp</dimen>
+    <dimen name="drawer_menu_width">280dp</dimen>
+
+<!--    <dimen name="design_bottom_navigation_item_max_width" tools:override="true">400dp</dimen>-->
+<!--    <dimen name="design_bottom_navigation_active_item_max_width" tools:override="true">400dp</dimen>-->
+<!--    <dimen name="bottom_navigation_icon" tools:override="true">4dp</dimen>-->
+<!--    <dimen name="bottom_navigation_text_size_active" tools:override="true">12dp</dimen>-->
+<!--    <dimen name="bottom_navigation_text_size_inactive" tools:override="true">8dp</dimen>-->
+<!--    <dimen name="design_bottom_navigation_icon_size" tools:override="true">6dp</dimen> -->
+</resources>

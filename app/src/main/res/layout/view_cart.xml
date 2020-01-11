@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:padding="@dimen/padding_M"
+    tools:ignore="HardcodedText,SmallSp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_L"
+        app:srcCompat="@drawable/ic_cart" />
+
+    <com.toankh.roundview.RoundTextView
+        android:id="@+id/cart_number"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_gravity="top|right"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        app:rv_backgroundColor="@color/text_red"
+        app:rv_cornerRadius="8dp"
+        tools:ignore="SpUsage" />
+</FrameLayout>

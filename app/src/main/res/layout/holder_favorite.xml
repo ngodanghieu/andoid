@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/padding_M"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0.75dp"
+    app:contentPadding="0dp"
+    tools:ignore="HardcodedText,SpUsage">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/padding_S"
+        android:paddingBottom="@dimen/padding_S">
+
+        <ImageView
+            android:id="@+id/holder_favorite_thumb"
+            android:layout_width="@dimen/thumb_normal_width"
+            android:layout_height="@dimen/thumb_normal_height"
+            android:layout_marginStart="@dimen/padding_M"
+            android:layout_marginLeft="@dimen/padding_M"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/holder_favorite_clear"
+            android:layout_width="@dimen/clear_size"
+            android:layout_height="@dimen/clear_size"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="@dimen/padding_M"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_close_gray"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/holder_favorite_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_XXL"
+            android:layout_marginLeft="@dimen/padding_XXL"
+            android:layout_marginEnd="@dimen/padding_L"
+            android:layout_marginRight="@dimen/padding_L"
+            android:paddingBottom="@dimen/padding_L"
+            android:text="SHD Lotus - Da Lat"
+            android:textColor="@color/grey900"
+            android:textSize="@dimen/text_lv3_5"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@+id/holder_favorite_thumb"
+            app:layout_constraintRight_toLeftOf="@+id/holder_favorite_clear"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/holder_favorite_address"
+            style="@style/orderValue"
+            android:layout_marginStart="@dimen/padding_XXL"
+            android:layout_marginLeft="@dimen/padding_XXL"
+            android:layout_marginEnd="@dimen/padding_L"
+            android:layout_marginRight="@dimen/padding_L"
+            android:paddingBottom="@dimen/padding_M"
+            android:text="Lam Dong Viet Nam"
+            app:layout_constraintLeft_toRightOf="@+id/holder_favorite_thumb"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/holder_favorite_name" />
+
+        <TextView
+            android:id="@+id/holder_favorite_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_XXL"
+            android:layout_marginLeft="@dimen/padding_XXL"
+            android:layout_marginEnd="@dimen/padding_L"
+            android:layout_marginRight="@dimen/padding_L"
+            android:paddingBottom="@dimen/padding_M"
+            android:text="100,000 VND"
+            android:textColor="@color/text_red"
+            android:textSize="@dimen/text_lv3_5"
+            app:layout_constraintLeft_toRightOf="@+id/holder_favorite_thumb"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/holder_favorite_address" />
+
+        <!-- <com.bmbsoft.ecommerce.ui.view.RatingBar
+             android:id="@+id/holder_favorite_rating"
+             style="@style/ratingBar"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="@dimen/padding_XXL"
+             android:layout_marginLeft="@dimen/padding_XXL"
+             android:layout_marginEnd="@dimen/padding_L"
+             android:layout_marginRight="@dimen/padding_L"
+             android:visibility="gone"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintLeft_toRightOf="@+id/holder_favorite_thumb"
+             app:layout_constraintTop_toBottomOf="@+id/holder_favorite_price"
+             app:srb_rating="4"
+             app:srb_starSize="17dp" />
+
+         <TextView
+             android:id="@+id/holder_favorite_comments"
+             style="@style/orderValue"
+             android:layout_marginStart="@dimen/padding_XXL"
+             android:layout_marginLeft="@dimen/padding_XXL"
+             android:text="50 comments"
+             android:visibility="gone"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintLeft_toRightOf="@+id/holder_favorite_rating"
+             app:layout_constraintRight_toRightOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/holder_favorite_price" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

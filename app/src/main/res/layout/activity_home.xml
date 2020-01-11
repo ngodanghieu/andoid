@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+
+<RelativeLayout
+    android:id="@+id/containerView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--<include layout="@layout/ab_home_drawer" />-->
+
+    <FrameLayout
+        android:id="@+id/home_container"
+        android:background="@color/navy_blue"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ab_menu"
+        style="@style/abIcon"
+        android:layout_height="@dimen/toolbar_height"
+        app:srcCompat="@drawable/ic_menu"
+        tools:ignore="VectorDrawableCompat" />
+</RelativeLayout>
+
+<!--android:layout_width="@dimen/drawer_menu_width"-->
+<FrameLayout
+    android:id="@+id/main_left_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="left"
+    android:background="@color/white" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

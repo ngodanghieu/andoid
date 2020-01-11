@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "766063271233",
+    "firebase_url": "https://doan-7ad49.firebaseio.com",
+    "project_id": "doan-7ad49",
+    "storage_bucket": "doan-7ad49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766063271233:android:9686f62385e9ab05eb15c0",
+        "android_client_info": {
+          "package_name": "com.example.splashactivity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766063271233-1n4avajpve1q4t204o2grkbjtjbo37ih.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPa8nzxhaAjRI57KhaqscdxjUE8Wyh4U4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766063271233-1n4avajpve1q4t204o2grkbjtjbo37ih.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

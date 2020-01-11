@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:ignore="TextFields,HardcodedText,RtlHardcoded">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/padding_30"
+        android:gravity="center"
+        android:paddingLeft="@dimen/padding_L"
+        android:paddingRight="@dimen/padding_L"
+        android:text="@string/verify_phone_header"
+        android:textColor="@color/grey900"
+        android:textSize="@dimen/text_lv2_5" />
+
+    <TextView
+        android:id="@+id/verify_phone_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/padding_S"
+        android:gravity="center"
+        android:paddingLeft="@dimen/padding_XL"
+        android:paddingRight="@dimen/padding_XL"
+        android:text="+84 962 541 617"
+        android:textColor="@color/grey900"
+        android:textSize="@dimen/text_lv3_5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/padding_XXL"
+        android:gravity="center_horizontal"
+        android:text="@string/verify_phone_header_2"
+        android:textAllCaps="true"
+        android:textColor="@color/grey900"
+        android:textSize="@dimen/text_lv4"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/verify_phone_input_otp"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/padding_XL"
+        android:layout_marginTop="@dimen/padding_XL"
+        android:layout_marginRight="@dimen/padding_XL"
+        android:background="@android:color/transparent"
+        android:cursorVisible="false"
+        android:inputType="phone"
+        android:maxLength="6"
+        android:textColor="@color/transparent" />
+
+    <LinearLayout
+        android:id="@+id/verify_phone_otp_code_view"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/padding_60"
+        android:paddingRight="@dimen/padding_60"
+        android:weightSum="6">
+
+        <RelativeLayout style="@style/verifyInput">
+
+            <TextView
+                android:id="@+id/verify_phone_otp_code_0"
+                style="@style/verifyInputCode" />
+
+            <View style="@style/verifyInputUnderline" />
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/verifyInput">
+
+            <TextView
+                android:id="@+id/verify_phone_otp_code_1"
+                style="@style/verifyInputCode" />
+
+            <View style="@style/verifyInputUnderline" />
+
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/verifyInput">
+
+            <TextView
+                android:id="@+id/verify_phone_otp_code_2"
+                style="@style/verifyInputCode" />
+
+            <View style="@style/verifyInputUnderline" />
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/verifyInput">
+
+            <TextView
+                android:id="@+id/verify_phone_otp_code_3"
+                style="@style/verifyInputCode" />
+
+            <View style="@style/verifyInputUnderline" />
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/verifyInput">
+
+            <TextView
+                android:id="@+id/verify_phone_otp_code_4"
+                style="@style/verifyInputCode" />
+
+            <View style="@style/verifyInputUnderline" />
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/verifyInput">
+
+            <TextView
+                android:id="@+id/verify_phone_otp_code_5"
+                style="@style/verifyInputCode" />
+
+            <View style="@style/verifyInputUnderline" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <com.toankh.roundview.RoundTextView
+        android:id="@+id/verify_phone_btn_submit"
+        style="@style/buttonPrimary"
+        android:layout_marginLeft="@dimen/padding_30"
+        android:layout_marginTop="@dimen/padding_40"
+        android:layout_marginRight="@dimen/padding_30"
+        android:text="@string/active" />
+
+    <TextView
+        android:id="@+id/verify_phone_count_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/padding_30"
+        android:layout_marginTop="@dimen/padding_XXL"
+        android:layout_marginRight="@dimen/padding_30"
+        android:gravity="center_horizontal"
+        android:text="@string/verify_phone_count_down"
+        android:textColor="@color/grey900"
+        android:textSize="@dimen/text_lv2_5"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/verify_phone_resend_otp"
+        style="@style/textLink"
+        android:layout_marginTop="@dimen/padding_XXL"
+        android:layout_marginEnd="@dimen/padding_30"
+        android:layout_marginRight="@dimen/padding_30"
+        android:paddingTop="@dimen/padding_L"
+        android:paddingBottom="@dimen/padding_L"
+        android:text="@string/verify_phone_resend_otp"
+        android:visibility="visible" />
+</LinearLayout>

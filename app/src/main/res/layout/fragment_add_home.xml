@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include layout="@layout/ab_action_done" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:weightSum="10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                style="@style/menuTitle"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/padding_L"
+                android:layout_marginEnd="@dimen/padding_L"
+                android:text="Danh sach nha cua ban"
+                android:layout_height="wrap_content"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/list_home_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_M"
+                android:layout_marginStart="@dimen/padding_L"
+                android:layout_marginEnd="@dimen/padding_L">
+
+                <TextView
+                    android:id="@+id/list_home_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_S"
+                    android:layout_marginLeft="@dimen/padding_S"
+                    android:text="Danh sach nha cua ban"
+                    android:textColor="@color/grey700"
+                    android:textSize="@dimen/text_lv2_5"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/list_home_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_S"
+                    android:layout_marginLeft="@dimen/padding_S"
+                    android:paddingTop="@dimen/padding_S"
+                    android:text="phong so 1 toa nha zzz"
+                    android:textColor="@color/grey900"
+                    android:textSize="@dimen/text_lv3"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/list_home_label" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/new_address_city_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/padding_M"
+                    android:tint="@color/grey700"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/list_home_value"
+                    app:srcCompat="@drawable/ic_arrow_down"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:background="@color/grey500"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_home_recyclerview"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/inputLayout"
+            android:layout_marginTop="@dimen/padding_XXL">
+
+            <EditText
+                android:id="@+id/home_add_name"
+                style="@style/inputEdt"
+                android:hint="Ten Nha"
+                android:enabled="false"
+                android:imeOptions="actionNext"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/inputLayout"
+            android:layout_marginTop="@dimen/padding_M">
+            <AutoCompleteTextView
+                android:id="@+id/list_home_price"
+                style="@style/inputEdt"
+                android:enabled="true"
+                android:hint="Nhap gia"
+                android:textColor="@color/grey600" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/inputLayout"
+            android:layout_marginTop="@dimen/padding_M">
+
+            <EditText
+                android:id="@+id/list_home_descstrion"
+                style="@style/inputEdt"
+                android:hint="Mo ta"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <View style="@style/divider" />
+
+        <LinearLayout
+            android:id="@+id/iamge_view"
+            style="@style/menuItem"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/menu_icon"
+                android:layout_height="@dimen/menu_icon"
+                android:contentDescription="@string/title_change_password"
+                android:tint="@color/colorPrimary"
+                app:srcCompat="@drawable/ic_lock"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                style="@style/menuTitle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Them anh" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/title_change_password"
+                android:src="@drawable/ic_froward" />
+        </LinearLayout>
+
+        <View style="@style/divider" />
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/listimage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="9"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="60dp"
+                android:contentDescription="@string/title_change_password"
+                android:tint="@color/colorPrimary"
+                app:srcCompat="@drawable/default_image"
+                tools:ignore="VectorDrawableCompat" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="60dp"
+                android:contentDescription="@string/title_change_password"
+                android:tint="@color/colorPrimary"
+                app:srcCompat="@drawable/default_image"
+                tools:ignore="VectorDrawableCompat" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="60dp"
+                android:contentDescription="@string/title_change_password"
+                android:tint="@color/colorPrimary"
+                app:srcCompat="@drawable/default_image"
+                tools:ignore="VectorDrawableCompat" />
+
+        </LinearLayout>
+        <View style="@style/divider" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    tools:ignore="HardcodedText">
+
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ab_layout"
+        android:foreground="#70000000"
+        android:scaleType="centerCrop"
+        android:src="@drawable/common_google_signin_btn_icon_disabled" />
+
+    <LinearLayout
+        android:id="@+id/about_logo_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ab_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/padding_30"
+        android:layout_marginBottom="@dimen/padding_XXL"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/about_logo"
+            android:layout_height="@dimen/about_logo"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/padding_XL"
+            android:gravity="center_vertical"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_lv3_5" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/about_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/about_logo_view"
+        android:gravity="center"
+        android:text="@string/version_text_format"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_lv3" />
+
+    <TextView
+        android:id="@+id/about_release"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/about_version"
+        android:gravity="center"
+        android:text="@string/release_text_format"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_lv3" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/about_version"
+        android:layout_marginTop="@dimen/padding_30"
+        android:gravity="center"
+        android:text="-----"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_lv3" />
+
+    <com.toankh.roundview.RoundTextView
+        android:id="@+id/about_contact_us"
+        style="@style/button"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:paddingLeft="@dimen/padding_20"
+        android:paddingRight="@dimen/padding_20"
+        android:text="@string/contact_us"
+        android:layout_centerHorizontal="true"
+        app:rv_backgroundColor="#40FFFFFF"
+        android:layout_above="@+id/about_copyright" />
+
+    <TextView
+        android:id="@+id/about_copyright"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/padding_XXL"
+        android:gravity="end"
+        android:text="@string/copyright"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_lv3" />
+
+</RelativeLayout>

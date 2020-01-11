@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/input_phone_label"
+        style="@style/inputLabel"
+        android:layout_marginStart="@dimen/padding_S"
+        android:layout_marginLeft="@dimen/padding_S"
+        android:layout_marginTop="@dimen/padding_M"
+        android:text="@string/hint_phone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginLeft="@dimen/padding_S"
+        android:layout_marginRight="@dimen/padding_S"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        tools:ignore="HardcodedText,RtlHardcoded">
+
+        <TextView
+            android:id="@+id/input_country_code"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="right|center_vertical"
+            android:text="+84"
+            android:textColor="@color/grey900"
+            android:textSize="@dimen/text_lv3" />
+
+        <View
+            android:layout_width="0.75dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/padding_M"
+            android:layout_marginTop="@dimen/padding_M"
+            android:layout_marginRight="@dimen/padding_M"
+            android:layout_marginBottom="@dimen/padding_M"
+            android:background="@color/grey900" />
+
+        <EditText
+            android:id="@+id/input_phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:gravity="center_vertical"
+            android:imeOptions="actionNone"
+            android:inputType="phone"
+            android:maxLength="20"
+            android:textColor="@color/grey900"
+            android:textSize="@dimen/text_lv3" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/input_phone_number_divider"
+        style="@style/divider"
+        android:layout_height="1.5dp"
+        android:layout_marginLeft="@dimen/padding_S"
+        android:layout_marginRight="@dimen/padding_S"
+        android:background="@color/grey600" />
+</LinearLayout>
