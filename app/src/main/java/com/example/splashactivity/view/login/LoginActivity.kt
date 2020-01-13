@@ -71,6 +71,7 @@ class LoginActivity : BaseActivity() {
                         userFirebase.userId = java.lang.Long.valueOf(strs.get(0))
                         val token :String = t["token"].toString()
                         user.token =token
+                        user.idUser = java.lang.Long.valueOf(strs.get(0))
                         getPref().edit().putString(Constant.AUTHOCATION,token).apply()
                         createFirebase(token,userFirebase);
                         getPref().edit().putString(Constant.DATA_USER,gson.toJson(user)).apply()

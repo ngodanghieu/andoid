@@ -50,9 +50,9 @@ dependencies {
     implementation 'com.toankh.roundview:roundview:1.0.1'
     implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
 
-    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
     implementation 'com.google.android.gms:play-services-maps:16.1.0'
-    implementation 'com.google.android.gms:play-services-location:16.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
     //implementation 'com.google.android.gms:play-services-analytics:15.0.2'
     //implementation 'com.google.android.gms:play-services-places:15.0.1'
     // implementation 'com.google.firebase:firebase-core:16.0.7'

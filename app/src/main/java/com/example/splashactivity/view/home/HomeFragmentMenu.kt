@@ -15,6 +15,7 @@ import com.example.splashactivity.view.more.ContactFragment
 import com.example.splashactivity.view.more.MyFavoriteFragment
 import com.example.splashactivity.view.more.ProfileFragment
 import com.example.splashactivity.view.order.MyOrderFragment
+import com.example.splashactivity.view.order.OrderManager
 import layout.AddHomeFragment
 
 
@@ -28,6 +29,7 @@ class HomeFragmentMenu : Fragment(),View.OnClickListener {
     lateinit var btn_contact : View
     lateinit var btn_about : View
     lateinit var btn_setting : View
+    lateinit var btn_new_order : View
     lateinit var menu_profile_image : ImageView
     lateinit var menu_profile_name : TextView
 
@@ -46,6 +48,7 @@ class HomeFragmentMenu : Fragment(),View.OnClickListener {
         btn_setting = view.findViewById(R.id.menu_setting)
         menu_profile_image = view.findViewById(R.id.menu_profile_image)
         menu_profile_name = view.findViewById(R.id.menu_profile_name)
+        btn_new_order = view.findViewById(R.id.new_order)
         setViewsListener();
         return view;
     }
@@ -99,6 +102,11 @@ class HomeFragmentMenu : Fragment(),View.OnClickListener {
                 mActivity.hidenOrOpenDrawer()
                 mActivity.replaceFragment(AddHomeFragment.newInstance(), R.id.home_container,false)
             }
+
+            R.id.new_order -> {
+                mActivity.hidenOrOpenDrawer()
+                mActivity.replaceFragment(OrderManager.newInstance(), R.id.home_container,false)
+            }
         }
     }
 
@@ -113,6 +121,7 @@ class HomeFragmentMenu : Fragment(),View.OnClickListener {
         btn_setting.setOnClickListener(this)
         menu_profile_image.setOnClickListener(this)
         menu_profile_name.setOnClickListener(this)
+        btn_new_order.setOnClickListener(this)
     }
 
 

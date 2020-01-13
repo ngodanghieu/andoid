@@ -17,8 +17,6 @@
         android:id="@+id/holder_my_order_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/padding_L"
-        android:layout_marginRight="@dimen/padding_L"
         android:ellipsize="middle"
         android:maxLines="2"
         android:paddingBottom="@dimen/padding_L"
@@ -26,8 +24,10 @@
         android:textColor="@color/grey900"
         android:textSize="@dimen/text_lv3_5"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/holder_my_order_status"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -46,7 +46,7 @@
         android:layout_marginRight="@dimen/padding_L"
         android:text="123456789"
         app:layout_constraintLeft_toRightOf="@+id/guideline_1"
-        app:layout_constraintRight_toLeftOf="@id/holder_my_order_status"
+
         app:layout_constraintTop_toBottomOf="@+id/holder_my_order_name" />
 
     <TextView
@@ -65,7 +65,7 @@
         android:layout_marginRight="@dimen/padding_L"
         android:text="12:00, 11/11/2019"
         app:layout_constraintLeft_toRightOf="@+id/guideline_1"
-        app:layout_constraintRight_toLeftOf="@id/holder_my_order_status"
+
         app:layout_constraintTop_toBottomOf="@+id/holder_my_order_do_label" />
 
     <TextView
@@ -83,18 +83,91 @@
         android:layout_marginRight="@dimen/padding_L"
         android:text="DAng cho duyet"
         app:layout_constraintLeft_toRightOf="@+id/guideline_1"
-        app:layout_constraintRight_toLeftOf="@id/holder_my_order_status"
         app:layout_constraintTop_toBottomOf="@+id/holder_my_order_time_label" />
 
-    <ImageView
-        android:id="@+id/holder_my_order_status"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:contentDescription="@string/menu_my_orders"
-        android:src="@drawable/ic_status_pending"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/holder_my_order_name_label"
+        style="@style/orderValue"
+        android:text="NGuoi dat"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline_1"
+        app:layout_constraintTop_toBottomOf="@+id/holder_my_order_status_value" />
+
+
+    <TextView
+        android:id="@+id/holder_name_value"
+        style="@style/orderValue"
+        android:layout_marginEnd="@dimen/padding_L"
+        android:layout_marginRight="@dimen/padding_L"
+        android:text="DAng cho duyet"
+        app:layout_constraintLeft_toRightOf="@+id/guideline_1"
+        app:layout_constraintTop_toBottomOf="@+id/holder_my_order_status_value" />
+
+    <TextView
+        android:id="@+id/holder_my_order_phone_label"
+        style="@style/orderValue"
+        android:text="Phone :"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline_1"
+        app:layout_constraintTop_toBottomOf="@+id/holder_my_order_name_label" />
+
+
+    <TextView
+        android:id="@+id/holder_phone_value"
+        style="@style/orderValue"
+        android:layout_marginEnd="@dimen/padding_L"
+        android:layout_marginRight="@dimen/padding_L"
+        android:text="DAng cho duyet"
+        app:layout_constraintLeft_toRightOf="@+id/guideline_1"
+        app:layout_constraintTop_toBottomOf="@+id/holder_my_order_name_label" />
+
+    <TextView
+        android:id="@+id/holder_note_label"
+        style="@style/orderValue"
+        android:text="Phone :"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline_1"
+        app:layout_constraintTop_toBottomOf="@+id/holder_phone_value" />
+
+
+    <TextView
+        android:id="@+id/holder_note_value"
+        style="@style/orderValue"
+        android:layout_marginEnd="@dimen/padding_L"
+        android:layout_marginRight="@dimen/padding_L"
+        android:text="DAng cho duyet"
+        app:layout_constraintLeft_toRightOf="@+id/guideline_1"
+        app:layout_constraintTop_toBottomOf="@+id/holder_phone_value" />
+
+    <Button
+        app:layout_constraintTop_toBottomOf="@+id/holder_note_value"
+        android:id="@+id/btn_xacnhan"
+        style="@style/Font_family_regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_right_16"
+        android:layout_marginTop="@dimen/margin_top_8"
+        android:layout_marginRight="@dimen/margin_right_16"
+        android:layout_marginBottom="@dimen/margin_top_8"
+        android:background="@color/blue"
+        android:text="Xac nhan don hang"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_20" />
+
+    <Button
+        app:layout_constraintTop_toBottomOf="@+id/btn_xacnhan"
+        android:id="@+id/btn_huy"
+        style="@style/Font_family_regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_right_16"
+        android:layout_marginTop="@dimen/margin_top_8"
+        android:layout_marginRight="@dimen/margin_right_16"
+        android:layout_marginBottom="@dimen/margin_top_8"
+        android:background="@drawable/red_style"
+        android:text="huy don hang"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_20" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_1"

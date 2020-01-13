@@ -6,6 +6,7 @@ import com.example.splashactivity.model.home.HomeRequest
 import com.example.vinhomes.model.user.UserModel
 import okhttp3.MultipartBody
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.*
 
 
@@ -34,13 +35,21 @@ interface ApiService {
     fun getDataByUser(@Header("Authorization") token  :String ,@Query("idUser") id :Long) : Call<ResponseData?>?
 
 
-    @GET("api/home/create-home")
+    @GET("api/order/get-all-order-new-by-user")
+    fun getOrderNewByOwnner(@Header("Authorization") token  :String ,@Query("idUser") id :Long) : Call<ResponseData?>?
+
+
+    @POST("api/home/create-home")
     fun creaateHome(@Header("Authorization") token  :String ,@Body home :HomeRequest) : Call<ResponseData?>?
 
     @Multipart
-    @POST("uploat")
-    fun uploadphoto(@Part photo: MultipartBody.Part?): Call<String?>?
+    @POST("upload")
+    fun uploadphoto(@Header("Authorization") token  :String ,@Part photo: MultipartBody.Part?): Call<String>?
 
+    @POST("api/order/change-Status-Order")
+    fun changeStatus(@Header("Authorization") token  :String ,@Query("orderCode") code :String) : Call<ResponseData?>?
 
+    @DELETE("api/order/delete-Order")
+    fun removeOrder(@Header("Authorization") token  :String ,@Query("orderCode") code :String) : Call<ResponseData?>?
 
 }

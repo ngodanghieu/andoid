@@ -49,7 +49,8 @@ open class BaseActivity : AppCompatActivity(){
      lateinit var gson: Gson
     var userBase : UserModel? = null
 
-    val service: ApiService = RestClient.retrofitInstance!!.create(ApiService::class.java)
+    val service : ApiService = RestClient.retrofitInstance!!.create(ApiService::class.java)
+    val serviceImage: ApiService = RestClient.retrofitInstanceImage!!.create(ApiService::class.java)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mFragmentManager = getSupportFragmentManager()

@@ -46,15 +46,17 @@ class HomeFragment : Fragment() {
 
     }
     fun getDataHome(){
+        mActivity.showDialogLoading()
         mActivity.service.getDataHome()?.enqueue(object : Callback<ResponseData?> {
             override fun onFailure(call: Call<ResponseData?>, t: Throwable) {
                 Toast.makeText(context, "Hello Javatpoint", Toast.LENGTH_LONG).show()
                 Log.d("HOMEFRAGMENT","k data")
+                mActivity.hideDialogLoading()
             }
             override fun onResponse(call: Call<ResponseData?>, response: Response<ResponseData?>) {
                 if(response.isSuccessful && response.body() != null){
                     initAdapter(response.body()!!.content as ArrayList<HomeModel>)
-
+                    mActivity.hideDialogLoading()
                 }
             }
         })

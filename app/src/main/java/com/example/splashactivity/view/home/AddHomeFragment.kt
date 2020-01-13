@@ -1,11 +1,10 @@
 package layout
 
-import android.R.attr
-
+import android.Manifest
+import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.database.Cursor
-import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -14,36 +13,29 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
-import android.widget.EditText
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.homes.model.home.ResponseData
 import com.example.splashactivity.R
 import com.example.splashactivity.model.home.HolderHomeLis
+import com.example.splashactivity.model.home.HomeRequest
+import com.example.splashactivity.util.Constant
 import com.example.splashactivity.view.Adapter.ListHomeAdapter
 import com.example.splashactivity.view.home.HomeActivity
+import okhttp3.MediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.io.FileNotFoundException
-import java.io.InputStream
-
-import android.Manifest
-import android.app.Activity
-import android.os.Build.*
-
-import android.widget.Toast
-import androidx.core.content.ContextCompat.checkSelfPermission
-import com.example.splashactivity.model.home.HomeRequest
-import com.example.splashactivity.util.Constant
-import kotlinx.android.synthetic.main.activity_main.*
+import java.io.File
 
 
+@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class AddHomeFragment : Fragment(),View.OnClickListener {
     lateinit var mActivity : HomeActivity
     lateinit var recyclerView : RecyclerView
@@ -57,6 +49,7 @@ class AddHomeFragment : Fragment(),View.OnClickListener {
     lateinit var iamge_view : View
     lateinit var listimage : View
     lateinit var ab_done : AppCompatImageView
+    lateinit var imgone : ImageView
      var idHome :Long ? = -1
     var realpath :String = ""
 
@@ -80,6 +73,7 @@ class AddHomeFragment : Fragment(),View.OnClickListener {
         iamge_view = view.findViewById(R.id.iamge_view)
         listimage = view.findViewById(R.id.listimage)
         ab_done = view.findViewById(R.id.ab_done)
+        imgone = view.findViewById(R.id.imgone)
         getData()
         setOnClick()
         list_home_view.setOnClickListener({
@@ -102,6 +96,10 @@ class AddHomeFragment : Fragment(),View.OnClickListener {
                 Toast.makeText(mActivity,"chu chon nha",Toast.LENGTH_LONG).show()
             }
         })
+
+        imgone.setOnClickListener({
+            onclikimageViewthemhang()
+        })
     }
     override fun onAttach(activity: Activity) {
         super.onAttach(activity)
@@ -113,7 +111,7 @@ class AddHomeFragment : Fragment(),View.OnClickListener {
             return AddHomeFragment()
         }
 
-        //image pick code
+//        //image pick code
         private val IMAGE_PICK_CODE = 1000;
         //Permission code
         private val PERMISSION_CODE = 1001;
@@ -183,15 +181,17 @@ class AddHomeFragment : Fragment(),View.OnClickListener {
         list_home_view.setOnClickListener(this)
     }
 
-    fun onclikimageViewthemhang(v: View?) {
+    fun onclikimageViewthemhang() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
-        startActivityForResult(intent, 123)
+        startActivityForResult(intent, IMAGE_PICK_CODE)
     }
 
     fun saveHome(home : HomeRequest ){
         mActivity.showDialogLoading()
-        mActivity.service.creaateHome(mActivity.userBase!!.token.toString(),home)!!.enqueue(object : Callback<ResponseData?> {
+        val call = mActivity.service.creaateHome(mActivity.getPref().getString(Constant.AUTHOCATION, ""),home)
+
+        call!!.enqueue(object : Callback<ResponseData?> {
             override fun onResponse(call: Call<ResponseData?>, response: Response<ResponseData?>) {
                 if (response.isSuccessful && response.body() != null){
                     if (response.body()?.status == 1){
@@ -209,25 +209,25 @@ class AddHomeFragment : Fragment(),View.OnClickListener {
         })
     }
 
-//    fun selecrImage(){
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-//            if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) ==
-//                PackageManager.PERMISSION_DENIED){
-//                //permission denied
-//                val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE);
-//                //show popup to request runtime permission
-//                requestPermissions(permissions, PERMISSION_CODE);
-//            }
-//            else{
-//                //permission already granted
-//                pickImageFromGallery();
-//            }
-//        }
-//        else{
-//            //system OS is < Marshmallow
-//            pickImageFromGallery();
-//        }
-//    }
+    fun selectImage(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            if (checkSelfPermission(mActivity,Manifest.permission.READ_EXTERNAL_STORAGE) ==
+                PackageManager.PERMISSION_DENIED){
+                //permission denied
+                val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE);
+                //show popup to request runtime permission
+                requestPermissions(permissions, PERMISSION_CODE);
+            }
+            else{
+                //permission already granted
+                pickImageFromGallery();
+            }
+        }
+        else{
+            //system OS is < Marshmallow
+            pickImageFromGallery();
+        }
+    }
     private fun pickImageFromGallery() {
         //Intent to pick image
         val intent = Intent(Intent.ACTION_PICK)
@@ -256,8 +256,66 @@ class AddHomeFragment : Fragment(),View.OnClickListener {
     //handle result of picked image
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE){
-//            image_view.setImageURI(data?.data)
+//            imgone.setImageURI(data?.data)
+//                 val inputStream : InputStream  = mActivity.contentResolver.openInputStream(data?.data)
+//                 val bitmap : Bitmap  = BitmapFactory.decodeStream(inputStream)
+//                 imgone.setImageBitmap(bitmap)
+            val uri : Uri = data!!.data
+            realpath =getRealPathFromURI(uri)
+            uploadimage()
+            imgone.setImageURI(uri)
+
         }
     }
+
+    fun uploadimage(){
+        val file = File(realpath)
+        var file_path = file.absolutePath
+//        val arrayfile = file_path.split("\\.").toTypedArray()
+//        file_path =
+//            arrayfile[0] + "_" + System.currentTimeMillis() + "." + arrayfile[1]
+//        Log.d("LLLL", arrayfile[0])
+//        val ten = arrayfile[0].split("/").toTypedArray()
+////        tenimg = ten[5] + "_" + System.currentTimeMillis() + "." + arrayfile[1]
+
+        val requestBody =
+            RequestBody.create(MediaType.parse("multipart/form-data"), file)
+
+        val body =
+            MultipartBody.Part.createFormData("image", file_path, requestBody)
+
+        val callback: Call<String> = mActivity.serviceImage.uploadphoto("Client-ID ad637b41f54375b",body)!!
+        callback.enqueue(object : Callback<String?> {
+            override fun onResponse(
+                call: Call<String?>,
+                response: Response<String?>
+            ) {
+                if (response != null) {
+                    val errr = response.body()
+                    Log.d("BBB", errr)
+                }
+            }
+
+            override fun onFailure(
+                call: Call<String?>,
+                t: Throwable
+            ) {
+                Log.d("AAAAAAAAAAAAAAA", t.message)
+            }
+        })
+    }
+    fun getRealPathFromURI(contentUri: Uri?): String {
+         var path: String = ""
+        val proj = arrayOf(MediaStore.MediaColumns.DATA)
+        val cursor: Cursor =
+            mActivity.getContentResolver().query(contentUri, proj, null, null, null)
+        if (cursor.moveToFirst()) {
+            val column_index = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA)
+            path = cursor.getString(column_index)
+        }
+        cursor.close()
+        return path
+    }
+
 
 }
